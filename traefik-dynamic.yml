@@ -11,9 +11,9 @@ http:
       weighted:
         services:
           - name: app-stable-svc
-            weight: 50
+            weight: 90
           - name: app-canary-svc
-            weight: 50
+            weight: 10
 
     app-stable-svc:
       loadBalancer:
