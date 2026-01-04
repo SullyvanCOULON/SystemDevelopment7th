@@ -10,7 +10,17 @@ http:
     app-weighted:
       weighted:
         services:
-          - name: app-stable@docker
+          - name: app-stable-svc
             weight: 50
-          - name: app-canary@docker
+          - name: app-canary-svc
             weight: 50
+
+    app-stable-svc:
+      loadBalancer:
+        servers:
+          - url: http://systemdevelopment7th-app-stable-1:8080
+
+    app-canary-svc:
+      loadBalancer:
+        servers:
+          - url: http://systemdevelopment7th-app-canary-1:8080
